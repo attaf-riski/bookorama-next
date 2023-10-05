@@ -26,16 +26,36 @@ export const DELETE = async (req: NextRequest) => {
 };
 
 export const PUT = async (req: NextRequest) => {
-  const { isbn, author, title, price, categoryId} = await req.json()
+  const { isbn, author, title, price, categoryId } = await req.json();
 
   const post = await prisma.books.update({
-      where: {
-          isbn: String(isbn)
-      },
-      data: {
-          isbn, author, title, price, categoryId
-      }
-  })
+    where: {
+      isbn: String(isbn),
+    },
+    data: {
+      isbn,
+      author,
+      title,
+      price,
+      categoryId,
+    },
+  });
 
-  return NextResponse.json({ post })
+  return NextResponse.json({ post });
+};
+
+export const POST = async (req: NextRequest) => {
+  const { isbn, author, title, price, categoryId } = await req.json();
+
+  const books = await prisma.books.create({
+    data: {
+      isbn,
+      author,
+      title,
+      price,
+      categoryId,
+    },
+  });
+
+  return NextResponse.json({ books });
 };

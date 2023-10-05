@@ -16,6 +16,7 @@ const Page = async () => {
 
   return (
     <div className="w-[1000px] mx-auto pt-20">
+      <h1>CRUD BUKU BOOKORAMA</h1>
       <Link
         href={"/create"}
         className="px-3 py-2 bg-zinc-900 hover:bg-zinc-800 rounded-md text-white"

@@ -64,6 +64,7 @@ const Page = ({ params }: { params: { isbn: string } }) => {
       className="w-[500px] mx-auto pt-20 flex flex-col gap-2"
       onSubmit={handleSubmit}
     >
+      <h1 className="text-white">UPDATE DATA BUKU BOOKORAMA</h1>
       <input
         type="text"
         disabled
